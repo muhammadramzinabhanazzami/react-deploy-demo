@@ -1,38 +1,275 @@
-.App {
-  text-align: center;
+/* --- Reset & Base Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #0b0f19;
+  color: #f3f4f6;
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links a {
+  color: #9ca3af;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #38bdf8;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  padding: 80px 0 100px 0;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.badge {
+  background-color: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  background: linear-gradient(to right, #38bdf8, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-bio {
+  font-size: 1.15rem;
+  color: #9ca3af;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background-color: #38bdf8;
+  color: #0b0f19;
+}
+
+.btn-primary:hover {
+  background-color: #0ea5e9;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  border: 1px solid #374151;
+  color: #f3f4f6;
+}
+
+.btn-secondary:hover {
+  background-color: #1f2937;
+  border-color: #4b5563;
+}
+
+/* --- Section Global --- */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 50px;
+  height: 4px;
+  background-color: #38bdf8;
+  border-radius: 2px;
+}
+
+/* --- Skills Section --- */
+.skills-section {
+  padding: 80px 0;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  background: rgba(17, 24, 39, 0.7);
+  border: 1px solid #1f2937;
+  padding: 30px;
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: #38bdf8;
+  background: rgba(31, 41, 55, 0.5);
+}
+
+.skill-icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.skill-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* --- Projects Section --- */
+.projects-section {
+  padding: 80px 0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.project-card {
+  background: linear-gradient(145deg, #111827, #1f2937);
+  border: 1px solid #374151;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: #818cf8;
+  box-shadow: 0 10px 30px -10px rgba(129, 140, 248, 0.3);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.project-info {
+  padding: 25px;
+}
+
+.project-tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #818cf8;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.project-info h3 {
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+}
+
+.project-info p {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-tech span {
+  background-color: #111827;
+  color: #9ca3af;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  border: 1px solid #374151;
+}
+
+/* --- Footer --- */
+.footer {
+  text-align: center;
+  padding: 60px 0 30px 0;
+  color: #4b5563;
+  font-size: 0.9rem;
+  border-top: 1px solid #1f2937;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
   }
-  to {
-    transform: rotate(360deg);
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .nav-links a {
+    margin: 0 10px;
   }
 }
