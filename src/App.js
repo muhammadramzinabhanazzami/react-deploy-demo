@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 // Silakan ganti nama di bawah ini dengan nama asli Anda
-const DEVELOPER_NAME = "Faza Aditya"; 
+const DEVELOPER_NAME = "Muhammad Ramzi N.A."; 
 
 function App() {
   return (
@@ -107,6 +107,7 @@ function App() {
 
       {/* Footer */}
       <footer className="footer">
+        <p>Semua yang ada di website ini adalah dummy data</p>
         <p>&copy; 2026 {DEVELOPER_NAME}. Dibuat dengan React JS & Dideploy via Vercel.</p>
       </footer>
     </div>
